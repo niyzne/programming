@@ -5,5 +5,6 @@ My personal collection of programming projects, challenges, and exercises across
 ---
 - [CodeWars](https://git.relaypub.net/niyzne/programming/src/branch/main/codewars/README.md)
 - [FreeCodeCamp](https://git.relaypub.net/niyzne/programming/src/branch/main/freecodecamp/README.md)
+- [Math](https://git.relaypub.net/niyzne/programming/src/branch/main/math/README.md)
 
 ---
