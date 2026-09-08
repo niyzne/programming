@@ -7,5 +7,6 @@ My personal collection of programming projects, challenges, and exercises across
 - [FreeCodeCamp](https://git.relaypub.net/niyzne/programming/src/branch/main/freecodecamp/README.md)
 - [Math](https://git.relaypub.net/niyzne/programming/src/branch/main/math/README.md)
 - [Hello World](https://git.relaypub.net/niyzne/programming/src/branch/main/hello-world/README.md)
+- [Random](https://git.relaypub.net/niyzne/programming/src/branch/main/random/README.md)
 
 ---
