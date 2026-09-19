@@ -2,10 +2,9 @@
 
 ## Level Description
 
-```
-First Program
+### First Program
 
-Text editor
+#### Text editor
 
 All programming is done in code windows. Each code window corresponds to a text file containing code. 
 You can rename the file by clicking on its name at the top of the window.
@@ -27,11 +26,15 @@ If you already know Python, it's not a problem either, you'll just be able to sk
 
 Currently, there are two drone commands available.
 
+```python
 harvest()
+```
 
 and 
 
+```python
 do_a_flip()
+```
 
 These are function calls. You can think of a function as a command that can be executed. You execute it using the () parentheses.
 
@@ -39,16 +42,19 @@ Try typing these statements in the code window and pressing the execute button.
 
 You can think of your code as a sequence of statements. You can run multiple statements in a row like this:
 
+```python
 harvest()
 do_a_flip()
 harvest()
-
-Unlocks
-
-Collecting grass will give you hay. Hay can be used to unlock loops in the unlock menu. Open the unlock menu with the button in the top right corner.
 ```
 
-commands:
+#### Unlocks
+
+Collecting grass will give you hay. Hay can be used to unlock loops in the unlock menu. Open the unlock menu with the button in the top right corner.
+
+---
+
+commands I tried:
 
 ```python
 do_a_flip()
