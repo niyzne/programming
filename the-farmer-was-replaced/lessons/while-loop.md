@@ -1,7 +1,3 @@
-# The Farmer Was Replaced - Level 2
-
-## Level Description
-
 ### While Loop
 
 You have unlocked the `while` loop and the values `True` and `False`. The `while` loop keeps executing the loop body as long as the condition is `True`.
@@ -71,23 +67,3 @@ The loop will repeat all indented statements after the colon.
 Statements after the indented block will be executed after the loop has finished.
 
 ---
-commands I tried:
-
-```python
-while True:
-	do_a_flip()
-```
-
-```python
-while True:
-	harvest()
-```
-
-```python
-while True:
-	harvest()
-	do_a_flip()
-```
-
----
-
