@@ -1,5 +1,5 @@
 while True:
 	if can_harvest():
 		harvest()
+		plant(Entities.Bush)
 		move(North)
-		# do_a_flip()
