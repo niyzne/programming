@@ -71,3 +71,23 @@ The loop will repeat all indented statements after the colon.
 Statements after the indented block will be executed after the loop has finished.
 
 ---
+commands I tried:
+
+```python
+while True:
+	do_a_flip()
+```
+
+```python
+while True:
+	harvest()
+```
+
+```python
+while True:
+	harvest()
+	do_a_flip()
+```
+
+---
+
