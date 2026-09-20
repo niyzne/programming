@@ -1,3 +1,5 @@
+# 1. Two Sum
+
 ## Challenge
 
 You are given an array of integers `nums` and an integer `target`, return _indices of the two numbers such that they add up to `target`_.
