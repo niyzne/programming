@@ -55,23 +55,20 @@ class Solution(object):
 ## Solution
 
 ```python
-# pseudocode I've thought about
 class Solution(object):
   def twoSum(self, nums, target):
-    # have an empty list to store the answer
-
-    # loop through the indexes of nums
-      # loop through the indexes after the first index
-        # check if the value at the first index
-        # plus the value at the second index equals target
-          # if true:
-            # add the first and second indexes to the answer list
-            # return the answer
-          # continue looping and checking
-
-    # return answer
+    answer = []
+    
+    for index1 in range(len(nums)):
+      for index2 in range(len(nums)):
+        sum = nums[index1] + nums[index2]
+        if sum == target and index1 != index2:
+          answer.append(index1)
+          answer.append(index2)
+        else:
+          continue
+    
+    return answer[:2]
 ```
 
 ---
-(CHALLENGE NOT COMPLETED AS OF RIGHT NOW)
-
