@@ -1,6 +1,12 @@
 ## Subtraction
 
-![Subtraction](../assets/subtraction.png)
+---
+
+$$
+a - b = c
+$$
+
+---
 
 ### Python
 

@@ -1,6 +1,14 @@
 ## Pythagorean Theorem (hypotenuse form)
 
-![Pythagorean Theorem](../assets/pythagorean-theorem.png)
+---
+
+$$
+a^2 + b^2 = c^2
+\quad\text{or}\quad
+c = \sqrt{a^2 + b^2}
+$$
+
+---
 
 ### Python
 
