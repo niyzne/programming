@@ -1,9 +1,11 @@
 ## Addition
 
 ---
+
 $$
 a + b = c
 $$
+
 ---
 
 ### Python
