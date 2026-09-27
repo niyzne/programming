@@ -1,6 +1,10 @@
 ## Addition
 
-![Addition](../assets/addition.png)
+---
+$$
+a + b = c
+$$
+---
 
 ### Python
 
