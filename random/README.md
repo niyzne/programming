@@ -5,9 +5,9 @@ random code things
 ---
 ## Python
 
-- [password](https://git.relaypub.net/niyzne/programming/src/branch/main/random/python/password.py)
-- [russian roulette](https://git.relaypub.net/niyzne/programming/src/branch/main/random/python/russian-roulette.py)
-- [test](https://git.relaypub.net/niyzne/programming/src/branch/main/random/python/test.py)
-- [lists](https://git.relaypub.net/niyzne/programming/src/branch/main/random/python/lists.py)
+- [password](python/password.py)
+- [russian roulette](python/russian-roulette.py)
+- [test](python/test.py)
+- [lists](python/lists.py)
 
 ---

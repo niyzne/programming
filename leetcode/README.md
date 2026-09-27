@@ -7,6 +7,6 @@ This repo is to show a collection of different challanges I managed to complete 
 
 ### Easy
 
-- [1. Two Sum](https://git.relaypub.net/niyzne/programming/src/branch/main/leetcode/python/easy/1-Two-Sum.md)
+- [1. Two Sum](python/easy/1-Two-Sum.md)
 
 ---
