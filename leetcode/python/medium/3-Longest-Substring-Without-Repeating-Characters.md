@@ -62,13 +62,13 @@ class Solution(object):
         else:
             for i in range(len(s)):
                 if s[i] not in slist:
-                    slist + s[i]
+                    slist += s[i]
                     if len(slist) > longestsubstr:
                         longestsubstr = len(slist)
                 else:
                     pass
 
-        return len(slist)
+        return longestsubstr
 ```
 
 ---
