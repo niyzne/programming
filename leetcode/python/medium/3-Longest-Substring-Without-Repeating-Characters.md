@@ -52,7 +52,23 @@ class Solution(object):
 
 ```python
 class Solution(object):
-	def lengthOfLongestSubstring(self, s):
+    def lengthOfLongestSubstring(self, s):
+        slist = ""
+        longestsubstr = 0
+        if len(s) == 0:
+            longestsubstr = 0
+        elif len(s) == 1:
+            longestsubstr = 1
+        else:
+            for i in range(len(s)):
+                if s[i] not in slist:
+                    slist + s[i]
+                    if len(slist) > longestsubstr:
+                        longestsubstr = len(slist)
+                else:
+                    pass
+
+        return len(slist)
 ```
 
 ---
