@@ -11,6 +11,6 @@ This repo is to show a collection of different challanges I managed to complete 
 
 ### Medium
 
-- [3. Longest Substring Without Repeating Characters](python/easy/3-Longest-Substring-Without-Repeating-Characters.md)
+- [3. Longest Substring Without Repeating Characters](python/medium/3-Longest-Substring-Without-Repeating-Characters.md)
 
 ---
