@@ -67,9 +67,8 @@ class Solution(object):
                     if len(slist) > longestsubstr:
                         longestsubstr = len(slist)
                 else:
-                    while s[i] in slist:
-                        start += 1
-                        slist = s[start:i + 1]
+                    start += slist.index(s[i]) + 1
+                    slist = s[start:i + 1]
                     if len(slist) > longestsubstr:
                         longestsubstr = len(slist)
 
