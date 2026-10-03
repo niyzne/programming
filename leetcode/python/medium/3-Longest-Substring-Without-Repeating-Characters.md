@@ -55,6 +55,7 @@ class Solution(object):
     def lengthOfLongestSubstring(self, s):
         slist = ""
         longestsubstr = 0
+        start = 0
         if len(s) == 0:
             longestsubstr = 0
         elif len(s) == 1:
@@ -66,7 +67,11 @@ class Solution(object):
                     if len(slist) > longestsubstr:
                         longestsubstr = len(slist)
                 else:
-                    pass
+                    while s[i] in slist:
+                        start += 1
+                        slist = s[start:i + 1]
+                    if len(slist) > longestsubstr:
+                        longestsubstr = len(slist)
 
         return longestsubstr
 ```
