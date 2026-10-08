@@ -1,2 +1,3 @@
 def bmiCalculator(weight, height):
-    return weight / (height / 100) ** 2;
+    bmi = weight / (height / 100) ** 2;
+    return f"Your BMI is {bmi}"

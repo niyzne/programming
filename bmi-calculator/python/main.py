@@ -4,14 +4,14 @@ while True:
     userChoice = input("Welcome to BMI calculator, please make your choice [1] KG and CM, [2] Lb and Ft [q]: ")
     if userChoice == "1":
         print("Mode: KG and CM")
-        weight = int(input("Enter your weight: "))
-        height = int(input("Enter your height: "))
+        weight = float(input("Enter your weight: "))
+        height = float(input("Enter your height: "))
         print(calculator.bmiCalculator(weight, height))
     elif userChoice == "2":
         print("Mode: Lb and Ft")
-        weight = int(input("Enter your weight: "))
+        weight = float(input("Enter your weight: "))
         poundWeight = weight * 0.453592
-        height = int(input("Enter your height: "))
+        height = float(input("Enter your height: "))
         feetHeight = height * 30.48
         print(calculator.bmiCalculator(poundWeight, feetHeight))
     elif userChoice == "q":

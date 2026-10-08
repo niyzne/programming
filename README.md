@@ -9,5 +9,6 @@ My personal collection of programming projects, challenges, and exercises across
 - [Hello World](hello-world/README.md)
 - [Random](random/README.md)
 - [LeetCode](leetcode/README.md)
+- [BMI calculator](bmi-calculator/README.md)
 
 ---
