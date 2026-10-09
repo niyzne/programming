@@ -22,7 +22,16 @@ Booleans
 int main() {
   int a = 10, b = 5, c = 7;
   int d = a + b * c;
-  printf("%d", d); // "%d" is a format specifier, in this case, int
+  printf("%d\n", d); // "%d" is a format specifier, in this case, int
+
+  float e = 10.3, f = 11.3, g = 11.42;
+  float h = e + f / g;
+  printf("%f\n", h); // "%f" is a format specifier, in this case, float
+
+
+  double i = 10.3, j = 11.3, k = 11.42;
+  double l = i * j / k;
+  printf("%f\n", l); // "%f" is a format specifier, in this case, double
 
   return 0; // means program has finished successfully
 }
