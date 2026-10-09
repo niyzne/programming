@@ -10,5 +10,6 @@ My personal collection of programming projects, challenges, and exercises across
 - [Random](random/README.md)
 - [LeetCode](leetcode/README.md)
 - [BMI calculator](bmi-calculator/README.md)
+- [Learning C dot org](learn-c-dot-org/README.md)
 
 ---
