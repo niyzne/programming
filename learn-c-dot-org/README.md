@@ -4,6 +4,6 @@ This repository is a workspace for my solutions to the [learn-c.org](https://www
 
 ---
 
-- [Hello World](hello-world/hello-world.c)
+- [Hello World](learning-the-basics/hello-world/hello-world.c)
 
 ---
