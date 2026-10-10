@@ -1,100 +1,74 @@
 import truthTables
 
+def correctInput(choice):
+    if choice == "1" or choice == "2":
+        while True:
+            value = input("Input 1 or 0: ")
+            if value.isnumeric():
+                value = int(value)
+                if (value == 0 or value == 1):
+                    break
+            print("Invalid input, try again")
+        return value
+    else:
+        while True:
+            value1 = input("Input 1 or 0 for first value: ")
+            value2 = input("Input 1 or 0 for second value: ")
+            if value1.isnumeric() and value2.isnumeric():
+                value1 = int(value1)
+                value2 = int(value2)
+                if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
+                    break
+            print("Invalid input, try again")
+        return value1, value2
+
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
         print(f"Mode selected: {mode}")
         if choice == "1":
-            while True:
-                value = input("Input 1 or 0: ")
-                if value.isnumeric():
-                    value = int(value)
-                    if (value == 0 or value == 1):
-                        break
-                print("Invalid input, try again")
+            value = correctInput(choice)
             newValue = truthTables.yesFunction(value)
             print(f"In {mode} mode, the value {value} became {newValue}")
         else:
-            while True:
-                value = input("Input 1 or 0: ")
-                if value.isnumeric():
-                    value = int(value)
-                    if (value == 0 or value == 1):
-                        break
-                print("Invalid input, try again")
+            value = correctInput(choice)
             newValue = truthTables.notFunction(value)
             print(f"In {mode} mode, the value {value} became {newValue}")
     else:
         print(f"Mode selected: {mode}")
         if choice == "3":
-            while True:
-                value1 = input("Input 1 or 0 for first value: ")
-                value2 = input("Input 1 or 0 for second value: ")
-                if value1.isnumeric() and value2.isnumeric():
-                    value1 = int(value1)
-                    value2 = int(value2)
-                    if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
-                        break
-                print("Invalid input, try again")
+            values = correctInput(choice)
+            value1 = values[0]
+            value2 = values[1]
             newValue = truthTables.andFunction(value1, value2)
             print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
         elif choice == "4":
-            while True:
-                value1 = input("Input 1 or 0 for first value: ")
-                value2 = input("Input 1 or 0 for second value: ")
-                if value1.isnumeric() and value2.isnumeric():
-                    value1 = int(value1)
-                    value2 = int(value2)
-                    if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
-                        break
-                print("Invalid input, try again")
+            values = correctInput(choice)
+            value1 = values[0]
+            value2 = values[1]
             newValue = truthTables.orFunction(value1, value2)
             print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
         elif choice == "5":
-            while True:
-                value1 = input("Input 1 or 0 for first value: ")
-                value2 = input("Input 1 or 0 for second value: ")
-                if value1.isnumeric() and value2.isnumeric():
-                    value1 = int(value1)
-                    value2 = int(value2)
-                    if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
-                        break
-                print("Invalid input, try again")
+            values = correctInput(choice)
+            value1 = values[0]
+            value2 = values[1]
             newValue = truthTables.nandFunction(value1, value2)
             print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
         elif choice == "6":
-            while True:
-                value1 = input("Input 1 or 0 for first value: ")
-                value2 = input("Input 1 or 0 for second value: ")
-                if value1.isnumeric() and value2.isnumeric():
-                    value1 = int(value1)
-                    value2 = int(value2)
-                    if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
-                        break
-                print("Invalid input, try again")
+            values = correctInput(choice)
+            value1 = values[0]
+            value2 = values[1]
             newValue = truthTables.norFunction(value1, value2)
             print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
         elif choice == "7":
-            while True:
-                value1 = input("Input 1 or 0 for first value: ")
-                value2 = input("Input 1 or 0 for second value: ")
-                if value1.isnumeric() and value2.isnumeric():
-                    value1 = int(value1)
-                    value2 = int(value2)
-                    if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
-                        break
-                print("Invalid input, try again")
+            values = correctInput(choice)
+            value1 = values[0]
+            value2 = values[1]
             newValue = truthTables.xorFunction(value1, value2)
             print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
         else:
-            while True:
-                value1 = input("Input 1 or 0 for first value: ")
-                value2 = input("Input 1 or 0 for second value: ")
-                if value1.isnumeric() and value2.isnumeric():
-                    value1 = int(value1)
-                    value2 = int(value2)
-                    if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
-                        break
-                print("Invalid input, try again")
+            values = correctInput(choice)
+            value1 = values[0]
+            value2 = values[1]
             newValue = truthTables.xnorFunction(value1, value2)
             print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
 
