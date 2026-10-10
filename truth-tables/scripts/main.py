@@ -1,4 +1,5 @@
 import truthTables
+import modes
 
 colors = {
     "red": "\033[91m",
@@ -29,6 +30,10 @@ def correctInput(choice):
                     break
             print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
         return value1, value2
+
+
+addOrMultiplyFunction(user_choice, mode)
+
 
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
@@ -80,7 +85,12 @@ def userInputs(choice, mode):
             newValue = truthTables.xnorFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
 
-options = {
+options1 = {
+    "1": "print logic gates",
+    "2": "add or multiply"
+}
+
+options2 = {
     "1": "yes",
     "2": "not",
     "3": "and",
@@ -88,16 +98,40 @@ options = {
     "5": "nand",
     "6": "nor",
     "7": "xor",
-    "8": "xnor",
+    "8": "xnor"
+}
+
+options3 = {
+    "1": "addition",
+    "2": "multiplication"
 }
 
 while True:
-    userchoice = input("which truth table would you want to check?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
-    if userchoice.isnumeric() and 1 <= int(userchoice) <= 8:
-        num = userchoice
-        mode = options[userchoice]
-        userInputs(num, mode)
-    elif userchoice == "q":
+    userchoice1 = input("What would you like to do?\n[1] print logic gate results\n[2] add or multiply logic gates\n[q] quit\nyour choice: ")
+    if userchoice1.isnumeric() and 1 <= int(userchoice1) <= 2:
+        if userchoice1 == "1":
+            userchoice2 = input("which truth table would you want to check?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+            if userchoice2.isnumeric() and 1 <= int(userchoice2) <= 8:
+                num = userchoice2
+                mode = options2[userchoice2]
+                userInputs(num, mode)
+            elif userchoice2 == "q":
+                print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+                break
+            else:
+                print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+        else:
+            option2Mode = input("What would you like to do?\n[1] add\n[2] multiply\n[q] quit\nyour choice: ")
+            if option2Mode.isnumeric() and 1 <= int(option2Mode) <= 2:
+                user_choice = option2Mode
+                mode = options3[option2Mode]
+                addOrMultiplyFunction(user_choice, mode)
+            elif option2Mode == "q":
+                print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+                break
+            else:
+                print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+    elif userchoice1 == "q":
         print(f'{colors["blue"]}Have a good day{colors["reset"]}')
         break
     else:
