@@ -38,46 +38,46 @@ def xnorFunction(a, b):
     return 1
   return 0
 
-print("======")
-print(yesFunction(0))
-print(yesFunction(1))
-
-print("======")
-print(notFunction(0))
-print(notFunction(1))
-
-print("======")
-print(andFunction(0, 0))
-print(andFunction(0, 1))
-print(andFunction(1, 0))
-print(andFunction(1, 1))
-
-print("======")
-print(orFunction(0, 0))
-print(orFunction(0, 1))
-print(orFunction(1, 0))
-print(orFunction(1, 1))
-
-print("======")
-print(nandFunction(0, 0))
-print(nandFunction(0, 1))
-print(nandFunction(1, 0))
-print(nandFunction(1, 1))
-
-print("======")
-print(norFunction(0, 0))
-print(norFunction(0, 1))
-print(norFunction(1, 0))
-print(norFunction(1, 1))
-
-print("======")
-print(xorFunction(0, 0))
-print(xorFunction(0, 1))
-print(xorFunction(1, 0))
-print(xorFunction(1, 1))
-
-print("======")
-print(xnorFunction(0, 0))
-print(xnorFunction(0, 1))
-print(xnorFunction(1, 0))
-print(xnorFunction(1, 1))
+# print("======")
+# print(yesFunction(0))
+# print(yesFunction(1))
+#
+# print("======")
+# print(notFunction(0))
+# print(notFunction(1))
+#
+# print("======")
+# print(andFunction(0, 0))
+# print(andFunction(0, 1))
+# print(andFunction(1, 0))
+# print(andFunction(1, 1))
+#
+# print("======")
+# print(orFunction(0, 0))
+# print(orFunction(0, 1))
+# print(orFunction(1, 0))
+# print(orFunction(1, 1))
+#
+# print("======")
+# print(nandFunction(0, 0))
+# print(nandFunction(0, 1))
+# print(nandFunction(1, 0))
+# print(nandFunction(1, 1))
+#
+# print("======")
+# print(norFunction(0, 0))
+# print(norFunction(0, 1))
+# print(norFunction(1, 0))
+# print(norFunction(1, 1))
+#
+# print("======")
+# print(xorFunction(0, 0))
+# print(xorFunction(0, 1))
+# print(xorFunction(1, 0))
+# print(xorFunction(1, 1))
+#
+# print("======")
+# print(xnorFunction(0, 0))
+# print(xnorFunction(0, 1))
+# print(xnorFunction(1, 0))
+# print(xnorFunction(1, 1))

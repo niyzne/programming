@@ -19,43 +19,43 @@ while True:
         print(f"Mode selected: {mode}")
         value1 = int(input("Input 1 or 0 for first value: "))
         value2 = int(input("Input 1 or 0 for second value: "))
-        newValue = truthTables.yesFunction(value)
-        print(f"In {mode} mode, the value {value} became {newValue}")
+        newValue = truthTables.andFunction(value1, value2)
+        print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
     elif userChoice == "4":
-        mode = "yes"
+        mode = "or"
         print(f"Mode selected: {mode}")
         value1 = int(input("Input 1 or 0 for first value: "))
         value2 = int(input("Input 1 or 0 for second value: "))
-        newValue = truthTables.yesFunction(value)
-        print(f"In {mode} mode, the value {value} became {newValue}")
+        newValue = truthTables.orFunction(value1, value2)
+        print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
     elif userChoice == "5":
-        mode = "yes"
+        mode = "nand"
         print(f"Mode selected: {mode}")
         value1 = int(input("Input 1 or 0 for first value: "))
         value2 = int(input("Input 1 or 0 for second value: "))
-        newValue = truthTables.yesFunction(value)
-        print(f"In {mode} mode, the value {value} became {newValue}")
+        newValue = truthTables.nandFunction(value1, value2)
+        print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
     elif userChoice == "6":
-        mode = "yes"
+        mode = "nor"
         print(f"Mode selected: {mode}")
         value1 = int(input("Input 1 or 0 for first value: "))
         value2 = int(input("Input 1 or 0 for second value: "))
-        newValue = truthTables.yesFunction(value)
-        print(f"In {mode} mode, the value {value} became {newValue}")
+        newValue = truthTables.norFunction(value1, value2)
+        print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
     elif userChoice == "7":
-        mode = "yes"
+        mode = "xor"
         print(f"Mode selected: {mode}")
         value1 = int(input("Input 1 or 0 for first value: "))
         value2 = int(input("Input 1 or 0 for second value: "))
-        newValue = truthTables.yesFunction(value)
-        print(f"In {mode} mode, the value {value} became {newValue}")
+        newValue = truthTables.xorFunction(value1, value2)
+        print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
     elif userChoice == "8":
-        mode = "yes"
+        mode = "xnor"
         print(f"Mode selected: {mode}")
         value1 = int(input("Input 1 or 0 for first value: "))
         value2 = int(input("Input 1 or 0 for second value: "))
-        newValue = truthTables.yesFunction(value)
-        print(f"In {mode} mode, the value {value} became {newValue}")
+        newValue = truthTables.xnorFunction(value1, value2)
+        print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
     elif userChoice == "q":
         break
     else:
