@@ -55,6 +55,7 @@ def correctInput(choice):
 
 def addOrMultiplyFunction(user_choice, mode):
     if mode == "addition":
+        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
         firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
             num = firstInput
@@ -84,6 +85,7 @@ def addOrMultiplyFunction(user_choice, mode):
 
 
     else: 
+        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
         firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
             num = firstInput
