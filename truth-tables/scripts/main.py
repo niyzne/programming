@@ -9,6 +9,27 @@ colors = {
     "reset": "\033[0m"
 }
 
+options1 = {
+    "1": "print logic gates",
+    "2": "add or multiply"
+}
+
+options2 = {
+    "1": "yes",
+    "2": "not",
+    "3": "and",
+    "4": "or",
+    "5": "nand",
+    "6": "nor",
+    "7": "xor",
+    "8": "xnor"
+}
+
+options3 = {
+    "1": "addition",
+    "2": "multiplication"
+}
+
 def correctInput(choice):
     if choice == "1" or choice == "2":
         while True:
@@ -147,27 +168,6 @@ def userInputs(choice, mode):
             newValue = truthTables.xnorFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
             return newValue
-
-options1 = {
-    "1": "print logic gates",
-    "2": "add or multiply"
-}
-
-options2 = {
-    "1": "yes",
-    "2": "not",
-    "3": "and",
-    "4": "or",
-    "5": "nand",
-    "6": "nor",
-    "7": "xor",
-    "8": "xnor"
-}
-
-options3 = {
-    "1": "addition",
-    "2": "multiplication"
-}
 
 while True:
     userchoice1 = input("What would you like to do?\n[1] print logic gate results\n[2] add or multiply logic gates\n[q] quit\nyour choice: ")
