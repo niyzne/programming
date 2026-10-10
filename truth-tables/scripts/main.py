@@ -1,5 +1,13 @@
 import truthTables
 
+colors = {
+    "red": "\033[91m",
+    "green": "\033[92m",
+    "yellow": "\033[93m",
+    "blue": "\033[94m",
+    "reset": "\033[0m"
+}
+
 def correctInput(choice):
     if choice == "1" or choice == "2":
         while True:
@@ -8,7 +16,7 @@ def correctInput(choice):
                 value = int(value)
                 if (value == 0 or value == 1):
                     break
-            print("Invalid input, try again")
+            print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
         return value
     else:
         while True:
@@ -19,58 +27,58 @@ def correctInput(choice):
                 value2 = int(value2)
                 if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
                     break
-            print("Invalid input, try again")
+            print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
         return value1, value2
 
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
-        print(f"Mode selected: {mode}")
+        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
         if choice == "1":
             value = correctInput(choice)
             newValue = truthTables.yesFunction(value)
-            print(f"In {mode} mode, the value {value} became {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
         else:
             value = correctInput(choice)
             newValue = truthTables.notFunction(value)
-            print(f"In {mode} mode, the value {value} became {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
     else:
-        print(f"Mode selected: {mode}")
+        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
         if choice == "3":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.andFunction(value1, value2)
-            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
         elif choice == "4":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.orFunction(value1, value2)
-            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
         elif choice == "5":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.nandFunction(value1, value2)
-            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
         elif choice == "6":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.norFunction(value1, value2)
-            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
         elif choice == "7":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.xorFunction(value1, value2)
-            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
         else:
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.xnorFunction(value1, value2)
-            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
 
 options = {
     "1": "yes",
@@ -90,6 +98,7 @@ while True:
         mode = options[userchoice]
         userInputs(num, mode)
     elif userchoice == "q":
+        print(f'{colors["blue"]}Have a good day{colors["reset"]}')
         break
     else:
-        print("wrong input, try again")
+        print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
