@@ -32,53 +32,63 @@ def correctInput(choice):
         return value1, value2
 
 
-addOrMultiplyFunction(user_choice, mode):
+def addOrMultiplyFunction(user_choice, mode):
     if mode == "addition":
         firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
             num = firstInput
-            mode = options2[firstInput]
-            first = userInputs(num, mode)
+            mode1Mode = options2[firstInput]
+            first = userInputs(num, mode1Mode)
         elif firstInput == "q":
             print(f'{colors["blue"]}Have a good day{colors["reset"]}')
-            break
+            return
         else:
             print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+            return
 
         secondInput = input(f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if secondInput.isnumeric() and 1 <= int(secondInput) <= 8:
             num = secondInput
-            mode = options2[secondInput]
-            second = userInputs(num, mode)
+            mode2Mode = options2[secondInput]
+            second = userInputs(num, mode2Mode)
         elif secondInput == "q":
             print(f'{colors["blue"]}Have a good day{colors["reset"]}')
-            break
+            return
         else:
             print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
-        print(modes.addition(first, second))
+            return
+
+        result = modes.addition(first, second)
+        print(f'{colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors["reset"]}')
+
+
     else: 
-        firstInput = (f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+        firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
             num = firstInput
-            mode = options2[firstInput]
-            first = userInputs(num, mode)
+            mode1Mode = options2[firstInput]
+            first = userInputs(num, mode1Mode)
         elif firstInput == "q":
             print(f'{colors["blue"]}Have a good day{colors["reset"]}')
-            break
+            return
         else:
             print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+            return
 
-        secondInput = (f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+        secondInput = input(f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if secondInput.isnumeric() and 1 <= int(secondInput) <= 8:
             num = secondInput
-            mode = options2[secondInput]
-            second = userInputs(num, mode)
+            mode2Mode = options2[secondInput]
+            second = userInputs(num, mode2Mode)
         elif secondInput == "q":
             print(f'{colors["blue"]}Have a good day{colors["reset"]}')
-            break
+            return
         else:
             print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
-        print(modes.multiplication(first, second))
+            return
+
+        result = modes.addition(first, second)
+        print(f'{colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors["reset"]}')
 
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
