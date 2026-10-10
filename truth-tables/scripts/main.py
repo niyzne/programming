@@ -83,7 +83,6 @@ def addOrMultiplyFunction(user_choice, mode):
         result = modes.addition(first, second)
         print(f'{colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors["reset"]}')
 
-
     else: 
         print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
         firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
