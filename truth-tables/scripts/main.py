@@ -1,4 +1,4 @@
-import truthTables
+import logicGates
 import modes
 
 colors = {
@@ -117,12 +117,12 @@ def userInputs(choice, mode):
         print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
         if choice == "1":
             value = correctInput(choice)
-            newValue = truthTables.yesFunction(value)
+            newValue = logicGates.yesFunction(value)
             print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
             return newValue
         else:
             value = correctInput(choice)
-            newValue = truthTables.notFunction(value)
+            newValue = logicGates.notFunction(value)
             print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
             return newValue
     else:
@@ -131,42 +131,42 @@ def userInputs(choice, mode):
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
-            newValue = truthTables.andFunction(value1, value2)
+            newValue = logicGates.andFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
             return newValue
         elif choice == "4":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
-            newValue = truthTables.orFunction(value1, value2)
+            newValue = logicGates.orFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
             return newValue
         elif choice == "5":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
-            newValue = truthTables.nandFunction(value1, value2)
+            newValue = logicGates.nandFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
             return newValue
         elif choice == "6":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
-            newValue = truthTables.norFunction(value1, value2)
+            newValue = logicGates.norFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
             return newValue
         elif choice == "7":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
-            newValue = truthTables.xorFunction(value1, value2)
+            newValue = logicGates.xorFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
             return newValue
         else:
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
-            newValue = truthTables.xnorFunction(value1, value2)
+            newValue = logicGates.xnorFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
             return newValue
 

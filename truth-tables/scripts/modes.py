@@ -1,4 +1,4 @@
-import truthTables
+import logicGates
 
 def addition(a, b):
   if a or b:
