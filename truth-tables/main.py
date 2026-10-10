@@ -4,12 +4,14 @@ def userInputs(choice, mode):
     if choice == "1" or choice == "2":
         print(f"Mode selected: {mode}")
         value = int(input("Input 1 or 0: "))
+        # found bug here need to fix
         newValue = truthTables.yesFunction(value)
         print(f"In {mode} mode, the value {value} became {newValue}")
     else:
         print(f"Mode selected: {mode}")
         value1 = int(input("Input 1 or 0 for first value: "))
         value2 = int(input("Input 1 or 0 for second value: "))
+        # found bug here need to fix
         newValue = truthTables.andFunction(value1, value2)
         print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
 
