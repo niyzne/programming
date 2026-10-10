@@ -3,17 +3,46 @@ import truthTables
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
         print(f"Mode selected: {mode}")
-        value = int(input("Input 1 or 0: "))
-        # found bug here need to fix
-        newValue = truthTables.yesFunction(value)
-        print(f"In {mode} mode, the value {value} became {newValue}")
+        if choice == "1":
+            value = int(input("Input 1 or 0: "))
+            newValue = truthTables.yesFunction(value)
+            print(f"In {mode} mode, the value {value} became {newValue}")
+        else:
+            value = int(input("Input 1 or 0: "))
+            newValue = truthTables.notFunction(value)
+            print(f"In {mode} mode, the value {value} became {newValue}")
     else:
         print(f"Mode selected: {mode}")
-        value1 = int(input("Input 1 or 0 for first value: "))
-        value2 = int(input("Input 1 or 0 for second value: "))
-        # found bug here need to fix
-        newValue = truthTables.andFunction(value1, value2)
-        print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+        if choice == "3":
+            value1 = int(input("Input 1 or 0 for first value: "))
+            value2 = int(input("Input 1 or 0 for second value: "))
+            newValue = truthTables.andFunction(value1, value2)
+            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+        elif choice == "4":
+            value1 = int(input("Input 1 or 0 for first value: "))
+            value2 = int(input("Input 1 or 0 for second value: "))
+            newValue = truthTables.orFunction(value1, value2)
+            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+        elif choice == "5":
+            value1 = int(input("Input 1 or 0 for first value: "))
+            value2 = int(input("Input 1 or 0 for second value: "))
+            newValue = truthTables.nandFunction(value1, value2)
+            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+        elif choice == "6":
+            value1 = int(input("Input 1 or 0 for first value: "))
+            value2 = int(input("Input 1 or 0 for second value: "))
+            newValue = truthTables.norFunction(value1, value2)
+            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+        elif choice == "7":
+            value1 = int(input("Input 1 or 0 for first value: "))
+            value2 = int(input("Input 1 or 0 for second value: "))
+            newValue = truthTables.xorFunction(value1, value2)
+            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
+        else:
+            value1 = int(input("Input 1 or 0 for first value: "))
+            value2 = int(input("Input 1 or 0 for second value: "))
+            newValue = truthTables.xnorFunction(value1, value2)
+            print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
 
 while True:
     userChoice = input("Which truth table would you want to check?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nYour choice: ")
