@@ -8,13 +8,54 @@ while True:
         value = int(input("Input 1 or 0: "))
         newValue = truthTables.yesFunction(value)
         print(f"In {mode} mode, the value {value} became {newValue}")
-    # elif userChoice == "2":
-    # elif userChoice == "3":
-    # elif userChoice == "4":
-    # elif userChoice == "5":
-    # elif userChoice == "6":
-    # elif userChoice == "7":
-    # elif userChoice == "8":
+    elif userChoice == "2":
+        mode = "not"
+        print(f"Mode selected: {mode}")
+        value = int(input("Input 1 or 0: "))
+        newValue = truthTables.notFunction(value)
+        print(f"In {mode} mode, the value {value} became {newValue}")
+    elif userChoice == "3":
+        mode = "and"
+        print(f"Mode selected: {mode}")
+        value1 = int(input("Input 1 or 0 for first value: "))
+        value2 = int(input("Input 1 or 0 for second value: "))
+        newValue = truthTables.yesFunction(value)
+        print(f"In {mode} mode, the value {value} became {newValue}")
+    elif userChoice == "4":
+        mode = "yes"
+        print(f"Mode selected: {mode}")
+        value1 = int(input("Input 1 or 0 for first value: "))
+        value2 = int(input("Input 1 or 0 for second value: "))
+        newValue = truthTables.yesFunction(value)
+        print(f"In {mode} mode, the value {value} became {newValue}")
+    elif userChoice == "5":
+        mode = "yes"
+        print(f"Mode selected: {mode}")
+        value1 = int(input("Input 1 or 0 for first value: "))
+        value2 = int(input("Input 1 or 0 for second value: "))
+        newValue = truthTables.yesFunction(value)
+        print(f"In {mode} mode, the value {value} became {newValue}")
+    elif userChoice == "6":
+        mode = "yes"
+        print(f"Mode selected: {mode}")
+        value1 = int(input("Input 1 or 0 for first value: "))
+        value2 = int(input("Input 1 or 0 for second value: "))
+        newValue = truthTables.yesFunction(value)
+        print(f"In {mode} mode, the value {value} became {newValue}")
+    elif userChoice == "7":
+        mode = "yes"
+        print(f"Mode selected: {mode}")
+        value1 = int(input("Input 1 or 0 for first value: "))
+        value2 = int(input("Input 1 or 0 for second value: "))
+        newValue = truthTables.yesFunction(value)
+        print(f"In {mode} mode, the value {value} became {newValue}")
+    elif userChoice == "8":
+        mode = "yes"
+        print(f"Mode selected: {mode}")
+        value1 = int(input("Input 1 or 0 for first value: "))
+        value2 = int(input("Input 1 or 0 for second value: "))
+        newValue = truthTables.yesFunction(value)
+        print(f"In {mode} mode, the value {value} became {newValue}")
     elif userChoice == "q":
         break
     else:
