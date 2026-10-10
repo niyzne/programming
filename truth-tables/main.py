@@ -72,25 +72,24 @@ def userInputs(choice, mode):
             newValue = truthTables.xnorFunction(value1, value2)
             print(f"In {mode} mode, the values {value1} and {value2} resulted in {newValue}")
 
+options = {
+    "1": "yes",
+    "2": "not",
+    "3": "and",
+    "4": "or",
+    "5": "nand",
+    "6": "nor",
+    "7": "xor",
+    "8": "xnor",
+}
+
 while True:
-    userChoice = input("Which truth table would you want to check?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nYour choice: ")
-    if userChoice == "1":
-        userInputs("1", "yes")
-    elif userChoice == "2":
-        userInputs("2", "not")
-    elif userChoice == "3":
-        userInputs("3", "and")
-    elif userChoice == "4":
-        userInputs("4", "or")
-    elif userChoice == "5":
-        userInputs("5", "nand")
-    elif userChoice == "6":
-        userInputs("6", "nor")
-    elif userChoice == "7":
-        userInputs("7", "xor")
-    elif userChoice == "8":
-        userInputs("8", "xnor")
-    elif userChoice == "q":
+    userchoice = input("which truth table would you want to check?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+    if userchoice.isnumeric() and 1 <= int(userchoice) <= 8:
+        num = userchoice
+        mode = options[userchoice]
+        userInputs(num, mode)
+    elif userchoice == "q":
         break
     else:
         print("wrong input, try again")
