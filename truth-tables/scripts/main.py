@@ -32,8 +32,53 @@ def correctInput(choice):
         return value1, value2
 
 
-addOrMultiplyFunction(user_choice, mode)
+addOrMultiplyFunction(user_choice, mode):
+    if mode == "addition":
+        firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+        if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
+            num = firstInput
+            mode = options2[firstInput]
+            first = userInputs(num, mode)
+        elif firstInput == "q":
+            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            break
+        else:
+            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
 
+        secondInput = input(f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+        if secondInput.isnumeric() and 1 <= int(secondInput) <= 8:
+            num = secondInput
+            mode = options2[secondInput]
+            second = userInputs(num, mode)
+        elif secondInput == "q":
+            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            break
+        else:
+            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+        print(modes.addition(first, second))
+    else: 
+        firstInput = (f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+        if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
+            num = firstInput
+            mode = options2[firstInput]
+            first = userInputs(num, mode)
+        elif firstInput == "q":
+            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            break
+        else:
+            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+
+        secondInput = (f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+        if secondInput.isnumeric() and 1 <= int(secondInput) <= 8:
+            num = secondInput
+            mode = options2[secondInput]
+            second = userInputs(num, mode)
+        elif secondInput == "q":
+            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            break
+        else:
+            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+        print(modes.multiplication(first, second))
 
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
@@ -42,10 +87,12 @@ def userInputs(choice, mode):
             value = correctInput(choice)
             newValue = truthTables.yesFunction(value)
             print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
+            return newValue
         else:
             value = correctInput(choice)
             newValue = truthTables.notFunction(value)
             print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
+            return newValue
     else:
         print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
         if choice == "3":
@@ -54,36 +101,42 @@ def userInputs(choice, mode):
             value2 = values[1]
             newValue = truthTables.andFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            return newValue
         elif choice == "4":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.orFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            return newValue
         elif choice == "5":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.nandFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            return newValue
         elif choice == "6":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.norFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            return newValue
         elif choice == "7":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.xorFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            return newValue
         else:
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = truthTables.xnorFunction(value1, value2)
             print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            return newValue
 
 options1 = {
     "1": "print logic gates",
