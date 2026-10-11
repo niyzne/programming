@@ -10,4 +10,8 @@ random code things
 - [test](python/test.py)
 - [lists](python/lists.py)
 
+### ClassTesting
+
+- [classTesting](python/classTesting/README.md)
+
 ---
