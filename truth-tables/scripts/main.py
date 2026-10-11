@@ -92,22 +92,19 @@ def addOrMultiplyFunction(user_choice, mode):
     print(f'{colors.colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors.colors["reset"]}')
 
 def userInputs(choice, mode):
+    print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
+    gate = gates[choice]
     if choice == "1" or choice == "2":
-        print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
-        gate = gates[choice]
         value = correctInput(choice)
         newValue = gate(value)
         print(f'{colors.colors["green"]}In {mode} mode, the value {value} became {newValue}{colors.colors["reset"]}')
         return newValue
-    else:
-        print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
-        gate = gates[choice]
-        values = correctInput(choice)
-        value1 = values[0]
-        value2 = values[1]
-        newValue = gate(value1, value2)
-        print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
-        return newValue
+    values = correctInput(choice)
+    value1 = values[0]
+    value2 = values[1]
+    newValue = gate(value1, value2)
+    print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
+    return newValue
 
 while True:
     userchoice1 = input("What would you like to do?\n[1] print logic gate results\n[2] add or multiply logic gates\n[q] quit\nyour choice: ")
