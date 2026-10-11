@@ -1,13 +1,6 @@
 import logicGates
 import modes
-
-colors = {
-    "red": "\033[91m",
-    "green": "\033[92m",
-    "yellow": "\033[93m",
-    "blue": "\033[94m",
-    "reset": "\033[0m"
-}
+import colors
 
 options1 = {
     "1": "print logic gates",
@@ -38,7 +31,7 @@ def correctInput(choice):
                 value = int(value)
                 if (value == 0 or value == 1):
                     break
-            print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
+            print(f'{colors.colors["red"]}Invalid input, try again{colors.colors["reset"]}')
         return value
     else:
         while True:
@@ -49,23 +42,23 @@ def correctInput(choice):
                 value2 = int(value2)
                 if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
                     break
-            print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
+            print(f'{colors.colors["red"]}Invalid input, try again{colors.colors["reset"]}')
         return value1, value2
 
 
 def addOrMultiplyFunction(user_choice, mode):
     if mode == "addition":
-        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
+        print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
         firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
             num = firstInput
             mode1Mode = options2[firstInput]
             first = userInputs(num, mode1Mode)
         elif firstInput == "q":
-            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
             return
         else:
-            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+            print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
             return
 
         secondInput = input(f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
@@ -74,27 +67,27 @@ def addOrMultiplyFunction(user_choice, mode):
             mode2Mode = options2[secondInput]
             second = userInputs(num, mode2Mode)
         elif secondInput == "q":
-            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
             return
         else:
-            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+            print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
             return
 
         result = modes.addition(first, second)
-        print(f'{colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors["reset"]}')
+        print(f'{colors.colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors.colors["reset"]}')
 
     else: 
-        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
+        print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
         firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
         if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
             num = firstInput
             mode1Mode = options2[firstInput]
             first = userInputs(num, mode1Mode)
         elif firstInput == "q":
-            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
             return
         else:
-            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+            print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
             return
 
         secondInput = input(f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
@@ -103,71 +96,71 @@ def addOrMultiplyFunction(user_choice, mode):
             mode2Mode = options2[secondInput]
             second = userInputs(num, mode2Mode)
         elif secondInput == "q":
-            print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+            print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
             return
         else:
-            print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+            print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
             return
 
         result = modes.addition(first, second)
-        print(f'{colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors["reset"]}')
+        print(f'{colors.colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors.colors["reset"]}')
 
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
-        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
+        print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
         if choice == "1":
             value = correctInput(choice)
             newValue = logicGates.yesFunction(value)
-            print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the value {value} became {newValue}{colors.colors["reset"]}')
             return newValue
         else:
             value = correctInput(choice)
             newValue = logicGates.notFunction(value)
-            print(f'{colors["green"]}In {mode} mode, the value {value} became {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the value {value} became {newValue}{colors.colors["reset"]}')
             return newValue
     else:
-        print(f'{colors["yellow"]}Mode selected: {mode}{colors["reset"]}')
+        print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
         if choice == "3":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = logicGates.andFunction(value1, value2)
-            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
             return newValue
         elif choice == "4":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = logicGates.orFunction(value1, value2)
-            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
             return newValue
         elif choice == "5":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = logicGates.nandFunction(value1, value2)
-            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
             return newValue
         elif choice == "6":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = logicGates.norFunction(value1, value2)
-            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
             return newValue
         elif choice == "7":
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = logicGates.xorFunction(value1, value2)
-            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
             return newValue
         else:
             values = correctInput(choice)
             value1 = values[0]
             value2 = values[1]
             newValue = logicGates.xnorFunction(value1, value2)
-            print(f'{colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors["reset"]}')
+            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
             return newValue
 
 while True:
@@ -180,10 +173,10 @@ while True:
                 mode = options2[userchoice2]
                 userInputs(num, mode)
             elif userchoice2 == "q":
-                print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+                print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
                 break
             else:
-                print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+                print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
         else:
             option2Mode = input("What would you like to do?\n[1] add\n[2] multiply\n[q] quit\nyour choice: ")
             if option2Mode.isnumeric() and 1 <= int(option2Mode) <= 2:
@@ -191,12 +184,12 @@ while True:
                 mode = options3[option2Mode]
                 addOrMultiplyFunction(user_choice, mode)
             elif option2Mode == "q":
-                print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+                print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
                 break
             else:
-                print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+                print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
     elif userchoice1 == "q":
-        print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+        print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
         break
     else:
-        print(f'{colors["red"]}wrong input, try again{colors["reset"]}')
+        print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
