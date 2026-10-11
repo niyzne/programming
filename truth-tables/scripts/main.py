@@ -23,6 +23,17 @@ options3 = {
     "2": "multiplication"
 }
 
+gates = {
+    "1": logicGates.yesFunction,
+    "2": logicGates.notFunction,
+    "3": logicGates.andFunction,
+    "4": logicGates.orFunction,
+    "5": logicGates.nandFunction,
+    "6": logicGates.norFunction,
+    "7": logicGates.xorFunction,
+    "8": logicGates.xnorFunction
+}
+
 def correctInput(choice):
     if choice == "1" or choice == "2":
         while True:
@@ -108,60 +119,20 @@ def addOrMultiplyFunction(user_choice, mode):
 def userInputs(choice, mode):
     if choice == "1" or choice == "2":
         print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
-        if choice == "1":
-            value = correctInput(choice)
-            newValue = logicGates.yesFunction(value)
-            print(f'{colors.colors["green"]}In {mode} mode, the value {value} became {newValue}{colors.colors["reset"]}')
-            return newValue
-        else:
-            value = correctInput(choice)
-            newValue = logicGates.notFunction(value)
-            print(f'{colors.colors["green"]}In {mode} mode, the value {value} became {newValue}{colors.colors["reset"]}')
-            return newValue
+        gate = gates[choice]
+        value = correctInput(choice)
+        newValue = gate(value)
+        print(f'{colors.colors["green"]}In {mode} mode, the value {value} became {newValue}{colors.colors["reset"]}')
+        return newValue
     else:
         print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
-        if choice == "3":
-            values = correctInput(choice)
-            value1 = values[0]
-            value2 = values[1]
-            newValue = logicGates.andFunction(value1, value2)
-            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
-            return newValue
-        elif choice == "4":
-            values = correctInput(choice)
-            value1 = values[0]
-            value2 = values[1]
-            newValue = logicGates.orFunction(value1, value2)
-            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
-            return newValue
-        elif choice == "5":
-            values = correctInput(choice)
-            value1 = values[0]
-            value2 = values[1]
-            newValue = logicGates.nandFunction(value1, value2)
-            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
-            return newValue
-        elif choice == "6":
-            values = correctInput(choice)
-            value1 = values[0]
-            value2 = values[1]
-            newValue = logicGates.norFunction(value1, value2)
-            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
-            return newValue
-        elif choice == "7":
-            values = correctInput(choice)
-            value1 = values[0]
-            value2 = values[1]
-            newValue = logicGates.xorFunction(value1, value2)
-            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
-            return newValue
-        else:
-            values = correctInput(choice)
-            value1 = values[0]
-            value2 = values[1]
-            newValue = logicGates.xnorFunction(value1, value2)
-            print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
-            return newValue
+        gate = gates[choice]
+        values = correctInput(choice)
+        value1 = values[0]
+        value2 = values[1]
+        newValue = gate(value1, value2)
+        print(f'{colors.colors["green"]}In {mode} mode, the values {value1} and {value2} resulted in {newValue}{colors.colors["reset"]}')
+        return newValue
 
 while True:
     userchoice1 = input("What would you like to do?\n[1] print logic gate results\n[2] add or multiply logic gates\n[q] quit\nyour choice: ")
