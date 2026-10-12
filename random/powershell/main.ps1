@@ -31,3 +31,6 @@ $num = "25"
 $num.GetType().FullName
 $num = [int]$num
 $num.GetType().FullName
+
+[int]$num2 = "35"
+$num.GetType().FullName
