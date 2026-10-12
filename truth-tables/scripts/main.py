@@ -63,33 +63,30 @@ def correctInput(choice):
 
 def addOrMultiplyFunction(user_choice, mode):
     print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
-    firstInput = input(f"For {mode}, what's the first operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
-    if firstInput.isnumeric() and 1 <= int(firstInput) <= 8:
-        num = firstInput
-        mode1Mode = options2[firstInput]
-        first = userInputs(num, mode1Mode)
-    elif firstInput == "q":
-        print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
-        return
-    else:
-        print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
-        return
+    results = []
+    selectedGates = []
 
-    secondInput = input(f"For {mode}, what's the second operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
-    if secondInput.isnumeric() and 1 <= int(secondInput) <= 8:
-        num = secondInput
-        mode2Mode = options2[secondInput]
-        second = userInputs(num, mode2Mode)
-    elif secondInput == "q":
-        print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
-        return
-    else:
-        print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
-        return
+    for i in range(2):
+        if i == 0:
+            title = "first"
+        else:
+            title = "second"
+        userInput = input(f"For {mode}, what's the {title} operator we will perform?\n[1] yes\n[2] not\n[3] and\n[4] or\n[5] nand\n[6] nor\n[7] xor\n[8] xnor\n[q] quit\nyour choice: ")
+        if userInput.isnumeric() and 1 <= int(userInput) <= 8:
+            num = userInput
+            mode1Mode = options2[userInput]
+            selectedGates.append(userInput)
+            results.append(userInputs(num, mode1Mode))
+        elif userInput == "q":
+            print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
+            return
+        else:
+            print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
+            return
 
     gate = operations[user_choice]
-    result = gate(first, second)
-    print(f'{colors.colors["green"]}In {mode} mode, the {options2[firstInput]} and {options2[secondInput]} have resulted in {result}{colors.colors["reset"]}')
+    result = gate(results[0], results[1])
+    print(f'{colors.colors["green"]}In {mode} mode, the {options2[selectedGates[0]]} and {options2[selectedGates[1]]} have resulted in {result}{colors.colors["reset"]}')
 
 def userInputs(choice, mode):
     print(f'{colors.colors["yellow"]}Mode selected: {mode}{colors.colors["reset"]}')
