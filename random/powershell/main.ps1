@@ -21,3 +21,8 @@ Write-Output $name
 Write-Output $NAME
 Write-Output $age
 Write-Output $AGE
+
+# Comparision
+$z = 10
+Write-Output $z
+$z -eq 10
