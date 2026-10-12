@@ -39,6 +39,12 @@ gates = {
     "8": logicGates.xnorFunction
 }
 
+def invalidInput():
+    print(f'{colors.colors["red"]}Invalid input, try again{colors.colors["reset"]}')
+
+def goodbye():
+    print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
+
 def correctInput(choice):
     if choice == "1" or choice == "2":
         while True:
@@ -47,7 +53,7 @@ def correctInput(choice):
                 value = int(value)
                 if (value == 0 or value == 1):
                     break
-            print(f'{colors.colors["red"]}Invalid input, try again{colors.colors["reset"]}')
+            invalidInput()
         return value
     else:
         while True:
@@ -58,7 +64,7 @@ def correctInput(choice):
                 value2 = int(value2)
                 if (value1 == 0 or value1 == 1) and (value2 == 0 or value2 == 1):
                     break
-            print(f'{colors.colors["red"]}Invalid input, try again{colors.colors["reset"]}')
+            invalidInput()
         return value1, value2
 
 def addOrMultiplyFunction(user_choice, mode):
@@ -78,10 +84,10 @@ def addOrMultiplyFunction(user_choice, mode):
             selectedGates.append(userInput)
             results.append(userInputs(num, mode1Mode))
         elif userInput == "q":
-            print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
+            goodbye()
             return
         else:
-            print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
+            invalidInput()
             return
 
     gate = operations[user_choice]
@@ -113,10 +119,10 @@ while True:
                 mode = options2[userchoice2]
                 userInputs(num, mode)
             elif userchoice2 == "q":
-                print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
+                goodbye()
                 break
             else:
-                print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
+                invalidInput()
         else:
             option2Mode = input("What would you like to do?\n[1] add\n[2] multiply\n[q] quit\nyour choice: ")
             if option2Mode.isnumeric() and 1 <= int(option2Mode) <= 2:
@@ -124,12 +130,12 @@ while True:
                 mode = options3[option2Mode]
                 addOrMultiplyFunction(user_choice, mode)
             elif option2Mode == "q":
-                print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
+                goodbye()
                 break
             else:
-                print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
+                invalidInput()
     elif userchoice1 == "q":
-        print(f'{colors.colors["blue"]}Have a good day{colors.colors["reset"]}')
+        goodbye()
         break
     else:
-        print(f'{colors.colors["red"]}wrong input, try again{colors.colors["reset"]}')
+        invalidInput()
