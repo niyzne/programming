@@ -11,3 +11,13 @@ Write-Output "Hello $name, This is very cool"
 $age = 20
 Write-Output $age
 Write-Output "$name is $age years old"
+
+# prints the type of the stuff
+$age.GetType().FullName
+$name.GetType().FullName
+
+# the stuff is case insensitive, interesting
+Write-Output $name
+Write-Output $NAME
+Write-Output $age
+Write-Output $AGE
