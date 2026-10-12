@@ -26,3 +26,8 @@ Write-Output $AGE
 $z = 10
 Write-Output $z
 $z -eq 10
+
+$num = "25"
+$num.GetType().FullName
+$num = [int]$num
+$num.GetType().FullName
