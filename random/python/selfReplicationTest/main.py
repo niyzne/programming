@@ -36,7 +36,8 @@ def newRandomName():
 def dupe():
     path = pathlib.Path("main.py")
     if path.exists():
-        shutil.copy2(ownFileName(), newRandomName())
+        newFile = newRandomName()
+        shutil.copy2(ownFileName(), newFile)
         # notification()
 
 def amountOfTimes():
