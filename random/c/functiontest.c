@@ -15,7 +15,7 @@ int main() {
   scanf("%d", &b);
 
   int result = add(a, b);
-  printf("%d\n", result);
+  printf("The sum of %d and %d is %d\n", a, b, result);
 
   return 0;
 }
