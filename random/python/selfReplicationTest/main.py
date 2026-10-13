@@ -2,7 +2,7 @@ import pathlib
 import shutil
 import uuid
 import os
-import subprocess
+# import subprocess
 
 colors = {
     "red": "\033[91m",
@@ -18,12 +18,12 @@ def invalidInput():
 def goodbye():
     print(f'{colors["blue"]}Have a good day{colors["reset"]}')
 
-def notification():
-    subprocess.run([
-        "notify-send",
-        "-a", " ",
-        "Hello, World",
-    ])
+# def notification():
+#     subprocess.run([
+#         "notify-send",
+#         "-a", " ",
+#         "Hello, World",
+#     ])
 
 def ownFileName():
     filename = os.path.basename(__file__)
@@ -37,7 +37,7 @@ def dupe():
     path = pathlib.Path("main.py")
     if path.exists():
         shutil.copy2(ownFileName(), newRandomName())
-        notification()
+        # notification()
 
 def amountOfTimes():
     times = int(input("How many times do you want to dupe: "))
