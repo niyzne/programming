@@ -5,7 +5,16 @@ int add(int a, int b) {
 }
 
 int main() {
-  int result = add(1, 2);
+  int a;
+  int b;
+
+  printf("Input number a: \n");
+  scanf("%d", &a);
+
+  printf("Input number b: \n");
+  scanf("%d", &b);
+
+  int result = add(a, b);
   printf("%d\n", result);
 
   return 0;
