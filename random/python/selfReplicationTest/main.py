@@ -4,19 +4,19 @@ import uuid
 import os
 # import subprocess
 
-colors = {
-    "red": "\033[91m",
-    "green": "\033[92m",
-    "yellow": "\033[93m",
-    "blue": "\033[94m",
-    "reset": "\033[0m"
-}
-
-def invalidInput():
-    print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
-
-def goodbye():
-    print(f'{colors["blue"]}Have a good day{colors["reset"]}')
+# colors = {
+#     "red": "\033[91m",
+#     "green": "\033[92m",
+#     "yellow": "\033[93m",
+#     "blue": "\033[94m",
+#     "reset": "\033[0m"
+# }
+#
+# def invalidInput():
+#     print(f'{colors["red"]}Invalid input, try again{colors["reset"]}')
+#
+# def goodbye():
+#     print(f'{colors["blue"]}Have a good day{colors["reset"]}')
 
 # def notification():
 #     subprocess.run([
@@ -39,19 +39,23 @@ def dupe():
         newFile = newRandomName()
         shutil.copy2(ownFileName(), newFile)
         # notification()
+        run = os.system(f"python3 {newFile}")
 
-def amountOfTimes():
-    times = int(input("How many times do you want to dupe: "))
-    for i in range(times):
-        dupe()
 
-while True:
-    userChoice = input("Select an option\n[1] make x amount of files\n[q] quit\nYour Choice: ")
-    if userChoice == "1":
-        print(f'{colors["yellow"]}Mode selected: make x amount of files{colors["reset"]}')
-        amountOfTimes()
-    elif userChoice == "q":
-        goodbye()
-        break
-    else:
-        invalidInput()
+# def amountOfTimes():
+#     times = int(input("How many times do you want to dupe: "))
+#     for i in range(times):
+#         dupe()
+
+dupe()
+
+# while True:
+#     userChoice = input("Select an option\n[1] make x amount of files\n[q] quit\nYour Choice: ")
+#     if userChoice == "1":
+#         print(f'{colors["yellow"]}Mode selected: make x amount of files{colors["reset"]}')
+#         amountOfTimes()
+#     elif userChoice == "q":
+#         goodbye()
+#         break
+#     else:
+#         invalidInput()
