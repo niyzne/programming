@@ -1,8 +1,8 @@
 import pathlib
 import shutil
-from notifypy import Notify
 import uuid
 import os
+import subprocess
 
 colors = {
     "red": "\033[91m",
@@ -19,10 +19,11 @@ def goodbye():
     print(f'{colors["blue"]}Have a good day{colors["reset"]}')
 
 def notification():
-    notification = Notify()
-    notification.title = "Python"
-    notification.message = "Hello, World"
-    notification.send()
+    subprocess.run([
+        "notify-send",
+        "-a", " ",
+        "Hello, World",
+    ])
 
 def ownFileName():
     filename = os.path.basename(__file__)
