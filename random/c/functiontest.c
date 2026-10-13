@@ -8,10 +8,10 @@ int main() {
   int a;
   int b;
 
-  printf("Input number a: \n");
+  printf("Input number a: ");
   scanf("%d", &a);
 
-  printf("Input number b: \n");
+  printf("Input number b: ");
   scanf("%d", &b);
 
   int result = add(a, b);
