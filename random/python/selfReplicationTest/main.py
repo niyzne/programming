@@ -37,7 +37,7 @@ def dupe():
     path = pathlib.Path("main.py")
     if path.exists():
         newFile = newRandomName()
-        shutil.copy2(ownFileName(), newFile)
+        shutil.copy(ownFileName(), newFile)
         # notification()
         run = os.system(f"python3 {newFile}")
 
