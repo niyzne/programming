@@ -2,6 +2,7 @@ import pathlib
 import shutil
 import uuid
 import os
+import time
 
 def ownFileName():
     filename = os.path.basename(__file__)
@@ -12,7 +13,8 @@ def newRandomName():
     return filename
 
 def dupe():
-    path = pathlib.Path("main.py")
+    time.sleep(2)
+    path = pathlib.Path(ownFileName())
     if path.exists():
         newFile = newRandomName()
         shutil.copy(ownFileName(), newFile)
