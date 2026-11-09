@@ -1,14 +1,17 @@
 # starting with something simple
 
 def intToBin(a):
-    newNum = ""
+    if a == 0:
+        return 0
+    else:
+        newNum = ""
 
-    while a > 0:
-        num = a % 2
-        newNum = str(num) + newNum
-        a = a // 2
+        while a > 0:
+            num = a % 2
+            newNum = str(num) + newNum
+            a = a // 2
 
-    return newNum
+        return newNum
 
 def binToInt(a):
     binSplit = list(str(a))
@@ -26,7 +29,19 @@ def binToInt(a):
 
     return newNum
 
-intNum = int(input("Enter a Number: "))
-print(intToBin(intNum))
-binNum = int(input("Enter a Binary Number: "))
-print(binToInt(binNum))
+while True:
+    userInput = input("What do you want to do?\n[1] Convert Intiger to Binary\n[2] Convert Binary to Intiger\n[q] Quit\nYour Choice: ")
+    if userInput == "1":
+        intNum = input("Enter a Number: ")
+        if intNum.isnumeric():
+            intNum = int(intNum)
+            print(intToBin(intNum))
+        else:
+            print("Wrong input, Try again")
+    elif userInput == "2":
+        binNum = input("Enter a Binary Number: ")
+        print(binToInt(binNum))
+    elif userInput == "q":
+        break
+    else:
+        print("Wrong input, Try again")
