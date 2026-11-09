@@ -22,15 +22,7 @@ const char* posOrNeg(int a) {
 }
 
 const char* divisibleByThree(int a) {
-  int sum = 0;
-
-  while (a > 0) {
-    int digit = a % 10;
-    sum += digit;
-    a = a / 10;
-  }
-
-  if (sum % 3 == 0) {
+  if (a % 3 == 0) {
     return "Divisible by Three";
   }
   else {
