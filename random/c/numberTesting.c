@@ -38,6 +38,28 @@ const char* divisibleByThree(int a) {
   }
 }
 
+const char* isPrimeNum(int a) {
+  if (a == 0 || a == 1 || a < 0) {
+    return "Nether a Prime nor Composite";
+  }
+  else {
+    bool found = false;
+
+    for (int i = 2; i < a; i++) {
+      if (a % i == 0) {
+        found = true;
+        break;
+      }
+    }
+
+    if (found == true) {
+      return "Not a Prime Number";
+    } else {
+      return "Prime Number";
+    }
+  }
+}
+
 int main() {
   int a;
 
@@ -47,10 +69,13 @@ int main() {
   const char* evenOrOddResult = evenOrOdd(a);
   const char* posOrNegResult = posOrNeg(a);
   const char* divisibleByThreeResult = divisibleByThree(a);
+  const char* isPrimeNumResult = isPrimeNum(a);
 
-  printf("The number %d is %s\n", a, evenOrOddResult);
-  printf("The number %d is %s\n", a, posOrNegResult);
-  printf("The number %d is %s\n", a, divisibleByThreeResult);
+  printf("The number %d is:\n", a);
+  printf("- %s\n", evenOrOddResult);
+  printf("- %s\n", posOrNegResult);
+  printf("- %s\n", divisibleByThreeResult);
+  printf("- %s\n", isPrimeNumResult);
 
   return 0;
 }
