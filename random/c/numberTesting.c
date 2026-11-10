@@ -1,33 +1,15 @@
 #include <stdio.h>
 
 const char* evenOrOdd(int a) {
-  if (a % 2 == 0) {
-    return "Even";
-  }
-  else {
-    return "Odd";
-  }
+  return a % 2 == 0 ? "Even" : "Odd";
 }
 
 const char* posOrNeg(int a) {
-  if (a > 0) {
-    return "Positive";
-  }
-  else if (a < 0) {
-    return "Negative";
-  }
-  else {
-    return "Zero";
-  }
+  return a > 0 ? "Positive" : a < 0 ? "Negative" : "Zero";
 }
 
 const char* divisibleByThree(int a) {
-  if (a % 3 == 0) {
-    return "Divisible by Three";
-  }
-  else {
-    return "Not Divisible by Three";
-  }
+  return a % 3 == 0 ? "Divisible by Three" : "Not Divisible by Three";
 }
 
 const char* isPrimeNum(int a) {
@@ -44,11 +26,7 @@ const char* isPrimeNum(int a) {
       }
     }
 
-    if (found == true) {
-      return "Not a Prime Number";
-    } else {
-      return "Prime Number";
-    }
+    return found == true ? "Not a Prime Number" : "Prime Number";
   }
 }
 
