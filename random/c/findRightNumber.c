@@ -1,19 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+int randomNum() {
+  return rand() % (20 - 1 + 1) + 1;
+}
 
 const char* numberGuess(int a) {
-  int b = 5;
+  int b = randomNum();
   return a > b ? "Too high!" : a < b ? "Too low!" : "Correct! You win!";
 }
 
 int main() {
-  int a;
+  while (true) {
+    int userGuess;
 
-  printf("Guess number: ");
-  scanf("%d", &a);
+    printf("Guess a number in between 1 and 20: ");
+    scanf("%d", &userGuess);
+    if !(1 <= userGuess <= 20) {
 
-  const char* result = numberGuess(a);
+    }
 
-  printf("%s", result);
+    const char* result = numberGuess(userGuess);
+
+    printf("%s", result);
+  }
 
   return 0;
 }
