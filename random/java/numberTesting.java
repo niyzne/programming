@@ -11,33 +11,15 @@ public class numberTesting {
   }
 
   public static String evenOrOdd(int a) {
-    if (a % 2 == 0) {
-      return "Even";
-    }
-    else {
-      return "Odd";
-    }
+    return (a % 2 == 0) ? "Even" : "Odd";
   }
 
   public static String posOrNeg(int a) {
-    if (a > 0) {
-      return "Positive";
-    }
-    else if (a < 0) {
-      return "Negative";
-    }
-    else {
-      return "Zero";
-    }
+    return (a > 0) ? "Positive" : (a < 0) ? "Negative" : "Zero";
   }
 
   public static String divisibleByThree(int a) {
-    if (a % 3 == 0) {
-      return "Divisible by Three";
-    }
-    else {
-      return "Not Divisible by Three";
-    }
+    return (a % 3 == 0) ? "Divisible by Three" : "Not Divisible by Three";
   }
 
   public static String isPrimeNum(int a) {
@@ -54,12 +36,7 @@ public class numberTesting {
         }
       }
 
-      if (found == true) {
-        return "Not a Prime Number";
-      }
-      else {
-        return "Prime Number";
-      }
+      return (found == true) ? "Not a Prime Number" : "Prime Number";
     }
   }
 
